@@ -33,18 +33,11 @@ Your app is ready to be deployed!
 `-_src
     |-components
         |-App
-        |-Filter
-        |-Home
-        |-Loading
-        |-Pokemon
-        |-PokemonDetails
-        |-PokemonList
+        |-Calendar
+        |-Editor
+        |-MoodPage
     |-scss
-    |-services
-    |-images
-        |-icons
-    |-fonts
-    |-utils
+
 ```
 
 ## Author
