@@ -1,0 +1,82 @@
+@import '../../scss/colors';
+
+.page__editor {
+  width: 100%;
+  height: 100vh;
+  max-width: 500px;
+  padding: 30px 40px;
+  margin: 0 auto;
+}
+
+.editor__fieldset {
+  border: none;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.editor__legent {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.editor__label {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.label__mood {
+  display: flex;
+  align-items: center;
+}
+
+.form__mood-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radio__mood {
+  &:first-child {
+    margin-right: 20px;
+  }
+}
+
+.editor__input {
+  width: 100%;
+  padding: 8px 20px;
+}
+
+.form__button {
+  border: none;
+  padding: 10px 20px;
+  color: $color-white;
+  border-radius: 3px;
+  margin: 10px auto;
+  width: 250px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit__button {
+  background-color: $color-blue;
+  text-transform: uppercase;
+  &:hover {
+    background-color: mix($color-blue, $color-grey);
+    transition: all 0.3s ease-in;
+  }
+}
+
+.cancel__button {
+  background-color: $color-white;
+  color: $color-grey;
+  &:hover {
+    background-color: $color-grey;
+    color: $color-white;
+    transition: all 0.3s ease-in;
+  }
+}
