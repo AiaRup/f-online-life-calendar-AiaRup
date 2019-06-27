@@ -1,4 +1,4 @@
-# POKEDEX
+# Moody's
 
 This project is a SPA that consists of a calendar page where you can see the mood you had every day and a form where you can add a new mood (by selecting a smiley) and a comment to each day.
 
