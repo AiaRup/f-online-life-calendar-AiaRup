@@ -36,6 +36,7 @@ Your app is ready to be deployed!
         |-Calendar
         |-Editor
         |-MoodPage
+        |-Smiley
     |-scss
 
 ```
