@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 import Smiley from '../Smiley';
 
-export default function Editor() {
+export default function Editor({ changeMood, currentMood }) {
   return (
     <form className="page__editor">
       <fieldset className="editor__fieldset">
@@ -19,13 +19,13 @@ export default function Editor() {
         <div className="form__mood-container">
           <div className="radio__mood">
             <label htmlFor="good" className="label__mood">
-              <input id="good" type="radio" value="good" name="mood" />
+              <input id="good" type="radio" value="good" name="mood" onChange={changeMood} checked={currentMood === 'good'} />
               <Smiley mood="good" />
             </label>
           </div>
           <div className="radio__mood">
             <label htmlFor="bad" className="label__mood">
-              <input id="bad" type="radio" value="bad" name="mood" />
+              <input id="bad" type="radio" value="bad" name="mood" onChange={changeMood} checked={currentMood === 'bad'} />
               <Smiley mood="bad" />
             </label>
           </div>

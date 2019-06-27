@@ -10,17 +10,25 @@ class App extends Component {
     super(props);
 
     this.state = {
-      moods: [{ mood: 'good', date: '01/01/2019' }, { mood: 'bad', date: '02/01/2019' }, { mood: 'good', date: '03/01/2019' }, { mood: 'good', date: '04/01/2019' }, { mood: 'bad', date: '05/01/2019' }]
+      moods: [{ mood: 'good', date: '01/01/2019' }, { mood: 'bad', date: '02/01/2019' }, { mood: 'good', date: '03/01/2019' }, { mood: 'good', date: '04/01/2019' }, { mood: 'bad', date: '05/01/2019' }],
+      currentMood: 'good'
     };
+    this.changeMood = this.changeMood.bind(this);
+  }
+
+  changeMood({ target: { value } }) {
+    this.setState({
+      currentMood: value
+    });
   }
 
   render() {
-    const { moods } = this.state;
+    const { moods, currentMood } = this.state;
     return (
       <div className="page">
         <Switch>
           <Route exact path="/" render={() => <Calendar moods={moods} />} />
-          <Route path="/editor" component={Editor} />
+          <Route path="/editor" render={() => <Editor currentMood={currentMood} changeMood={this.changeMood} />} />
           <Route path="/mood/:id" render={routerProps => <MoodPage date={routerProps.match.params.id} moods={moods} />} />
         </Switch>
       </div>
