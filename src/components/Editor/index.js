@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 import Smiley from '../Smiley';
 
-export default function Editor({ changeInputValue, currentMood, cancelEdit, message }) {
+export default function Editor({ changeInputValue, currentMood, cancelEdit, message, onSubmitNewMood }) {
   return (
     <form className="page__editor">
       <fieldset className="editor__fieldset">
@@ -39,12 +39,12 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
             <label htmlFor="message" className="editor__label">
               message
             </label>
-            <input id="message" type="text" name="message" placeholder="Why are you in a good mood?" className="editor__input" value={message} onChange={changeInputValue('message')}/>
+            <input id="message" type="text" name="message" placeholder="Why are you in a good mood?" className="editor__input" value={message} onChange={changeInputValue('message')} />
           </div>
         </fieldset>
       ) : null}
       <fieldset className="editor__fieldset buttons">
-        <input type="submit" value="Save" className="form__button submit__button" />
+        <input type="submit" value="Save" className="form__button submit__button" onClick={onSubmitNewMood} />
         <button type="button" className="form__button cancel__button" onClick={cancelEdit}>
           Cancel
         </button>
