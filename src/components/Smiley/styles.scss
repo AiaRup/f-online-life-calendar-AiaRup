@@ -1,0 +1,36 @@
+@import '../../scss/colors';
+
+.mood__face {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
+  .face__mouth,
+  .face__eyes {
+    color: black;
+    transform: rotate(90deg);
+  }
+  .face__mouth {
+    margin-top: -10px;
+  }
+}
+
+.good {
+  background: $color-yellow;
+}
+
+.bad {
+  background: $color-orange;
+  .face__eyes {
+    color: $color-white;
+  }
+  .face__mouth {
+    color: $color-white;
+    transform: rotate(-90deg) translateY(-1px);
+  }
+}

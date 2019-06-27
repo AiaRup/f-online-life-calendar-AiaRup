@@ -46,4 +46,4 @@ Your app is ready to be deployed!
 
 ## Acknowledgments
 
-This project is part of the online training phase of [Adalab digital course](https://adalab.es/). This is the first test of the training, that lasts 7 weeks.
+This project is part of the online training phase of [Adalab digital course](https://adalab.es/). This is the third test of the training, that lasts 7 weeks.
