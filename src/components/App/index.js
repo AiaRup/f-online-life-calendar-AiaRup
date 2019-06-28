@@ -28,6 +28,9 @@ class App extends Component {
 
   changeInputValue = property => ({ target: { value } }) => {
     this.setState(prevState => {
+      if (property === 'mood' && value === 'bad') {
+        return { newMood: { ...prevState.newMood, [property]: value, message: '' } };
+      }
       return { newMood: { ...prevState.newMood, [property]: value } };
     });
   };
