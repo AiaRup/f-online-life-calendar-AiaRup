@@ -20,13 +20,13 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
         <div className="form__mood-container">
           <div className="radio__mood">
             <label htmlFor="good" className="label__mood">
-              <input id="good" type="radio" value="good" name="mood" onChange={changeInputValue('currentMood')} checked={currentMood === 'good'} />
+              <input id="good" type="radio" value="good" name="mood" onChange={changeInputValue('mood')} checked={currentMood === 'good'} />
               <Smiley mood="good" />
             </label>
           </div>
           <div className="radio__mood">
             <label htmlFor="bad" className="label__mood">
-              <input id="bad" type="radio" value="bad" name="mood" onChange={changeInputValue('currentMood')} checked={currentMood === 'bad'} />
+              <input id="bad" type="radio" value="bad" name="mood" onChange={changeInputValue('mood')} checked={currentMood === 'bad'} />
               <Smiley mood="bad" />
             </label>
           </div>

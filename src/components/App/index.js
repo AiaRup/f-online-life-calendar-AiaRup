@@ -9,8 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      moods: [{ mood: 'good', date: '01-01-2019' }, { mood: 'bad', date: '02-01-2019' }, { mood: 'good', date: '03-01-2019' }, { mood: 'good', date: '04-01-2019' }, { mood: 'bad', date: '05-01-2019' }],
-      newMood: { currentMood: 'good', message: '', date: new Date().toJSON().slice(0, 10) }
+      moods: [{ mood: 'good', date: '01-01-2019', message: 'hola' }, { mood: 'bad', date: '02-01-2019', message: 'hola' }, { mood: 'good', date: '03-01-2019', message: 'hola' }, { mood: 'good', date: '04-01-2019', message: 'hola' }, { mood: 'bad', date: '05-01-2019', message: 'hola' }],
+      newMood: { mood: 'good', message: '', date: new Date().toJSON().slice(0, 10) }
     };
     this.cancelEdit = this.cancelEdit.bind(this);
     this.onSubmitNewMood = this.onSubmitNewMood.bind(this);
@@ -24,7 +24,7 @@ class App extends Component {
 
   cancelEdit() {
     this.setState(prevState => {
-      return { newMood: { ...prevState.newMood, currentMood: 'good', message: '' } };
+      return { newMood: { ...prevState.newMood, mood: 'good', message: '' } };
     });
   }
 
@@ -40,13 +40,13 @@ class App extends Component {
   render() {
     const {
       moods,
-      newMood: { currentMood, message, date }
+      newMood: { mood, message, date }
     } = this.state;
     return (
       <div className="page">
         <Switch>
           <Route exact path="/calendar" render={() => <Calendar moods={moods} />} />
-          <Route path="/editor" render={() => <Editor currentMood={currentMood} changeInputValue={this.changeInputValue} cancelEdit={this.cancelEdit} message={message} onSubmitNewMood={this.onSubmitNewMood} date={date} />} />
+          <Route path="/editor" render={() => <Editor currentMood={mood} changeInputValue={this.changeInputValue} cancelEdit={this.cancelEdit} message={message} onSubmitNewMood={this.onSubmitNewMood} date={date} />} />
           <Route path="/mood/:id" render={routerProps => <MoodPage date={routerProps.match.params.id} moods={moods} />} />
           <Redirect from="/" to="/editor" />
         </Switch>

@@ -14,6 +14,7 @@ export default function MoodPage({ date, moods }) {
       {smiley ? (
         <Fragment>
           <Smiley mood={smiley.mood} />
+          <div className="mood__page-message">{smiley.message}</div>
           <div className="smiley__date">{date}</div>
         </Fragment>
       ) : (
