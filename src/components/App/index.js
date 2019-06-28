@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Calendar from '../Calendar';
 import Editor from '../Editor';
 import MoodPage from '../MoodPage';
+import { isSupported } from '../utils/localStorage';
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,15 @@ class App extends Component {
     };
     this.cancelEdit = this.cancelEdit.bind(this);
     this.onSubmitNewMood = this.onSubmitNewMood.bind(this);
+  }
+
+  componentDidMount() {
+    if (isSupported(window.localStorage)) {
+      const storageData = JSON.parse(localStorage.getItem('moods'));
+      if (storageData) {
+        this.setState({ moods: storageData });
+      }
+    }
   }
 
   changeInputValue = property => ({ target: { value } }) => {
@@ -34,7 +44,9 @@ class App extends Component {
     // if (moods.filter(mood => mood.date === date).length > 0 ) {
 
     // }
-    this.setState({ moods: [...moods, newMood] });
+    this.setState({ moods: [...moods, newMood] }, () => {
+      localStorage.setItem('moods', JSON.stringify(this.state.moods));
+    });
   }
 
   render() {
