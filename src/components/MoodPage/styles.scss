@@ -7,7 +7,7 @@
   .mood__face {
     width: 300px;
     height: 300px;
-    font-size: 100px;
+    font-size: 120px;
     margin: 50px auto;
     flex-direction: row;
     .face__mouth,
@@ -24,6 +24,13 @@
     .face__mouth,
     .face__eyes {
       color: $color-white;
+      transform: rotate(180deg);
+    }
+    .face__mouth {
+      margin: -10px 20px 0 12px;
+    }
+    .face__eyes {
+      margin-right: 10px;
     }
   }
 
