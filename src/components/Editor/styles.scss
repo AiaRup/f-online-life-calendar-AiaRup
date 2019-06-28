@@ -75,6 +75,8 @@
 .cancel__button {
   background-color: $color-white;
   color: $color-grey;
+  text-decoration: none;
+  text-transform: capitalize;
   &:hover {
     background-color: $color-grey;
     color: $color-white;

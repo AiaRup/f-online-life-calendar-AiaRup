@@ -12,7 +12,17 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
           <label htmlFor="date" className="editor__label">
             Date
           </label>
-          <input type="date" id="start" name="mood__date" value={date} max={new Date().toJSON().slice(0, 10).replace("/",'-')} className="editor__input" />
+          <input
+            type="date"
+            id="start"
+            name="mood__date"
+            value={date}
+            max={new Date()
+              .toJSON()
+              .slice(0, 10)
+              .replace('/', '-')}
+            className="editor__input"
+          />
         </div>
       </fieldset>
       <fieldset className="editor__fieldset">
@@ -48,9 +58,9 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
         <Link to="/calendar" className="form__button submit__button" onClick={onSubmitNewMood}>
           save
         </Link>
-        <button type="button" className="form__button cancel__button" onClick={cancelEdit}>
-          Cancel
-        </button>
+        <Link to="/calendar" className="form__button cancel__button" onClick={cancelEdit}>
+          cancel
+        </Link>
       </fieldset>
     </form>
   );
