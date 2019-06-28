@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 export default function Calendar({ moods }) {
   return (
     <div className="page__calendar">
-      <Link to="/editor" className="calendar__plus-button" />
+      <Link to="/editor" className="calendar__plus-button">
+        +
+      </Link>
       <ol className="mood__list">
         {moods.map(day => {
           return (
-            <li className="mood__item" key={day.date}>
+            <li className="mood__item" key={day.date} title={day.date}>
               <Link to={`/mood/${day.date}`} className="mood__link">
                 <Smiley mood={day.mood} />
               </Link>

@@ -12,7 +12,7 @@
   font-weight: bold;
   .face__mouth,
   .face__eyes {
-    color: black;
+    color: $color-darkGrey;
     transform: rotate(90deg);
   }
   .face__mouth {
@@ -22,6 +22,16 @@
 
 .good {
   background: $color-yellow;
+  &:hover {
+    flex-direction: row;
+    .face__mouth {
+      transform: rotate(360deg);
+      margin: -4px 0 0 5px;
+    }
+    .face__eyes {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .bad {
@@ -32,5 +42,15 @@
   .face__mouth {
     color: $color-white;
     transform: rotate(-90deg) translateY(-1px);
+  }
+  &:hover {
+    flex-direction: row;
+    .face__mouth {
+      transform: rotate(-180deg);
+      margin: 0 0 0 5px;
+    }
+    .face__eyes {
+      transform: rotate(-180deg);
+    }
   }
 }

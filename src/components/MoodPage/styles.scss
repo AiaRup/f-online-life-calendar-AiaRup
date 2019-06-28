@@ -1,0 +1,51 @@
+@import '../../scss/colors';
+
+.mood__page {
+  min-height: 100vh;
+  padding: 30px;
+  text-align: center;
+  .mood__face {
+    width: 300px;
+    height: 300px;
+    font-size: 100px;
+    margin: 50px auto;
+    flex-direction: row;
+    .face__mouth,
+    .face__eyes {
+      color: $color-darkGrey;
+      transform: rotate(360deg);
+    }
+    .face__mouth {
+      margin: 10px 0 0 10px;
+    }
+  }
+
+  .mood__face.bad {
+    .face__mouth,
+    .face__eyes {
+      color: $color-white;
+    }
+  }
+
+  .smiley__date {
+    max-width: 290px;
+    margin: 100px auto 0;
+    background: $color-redish;
+    padding: 10px 20px;
+    color: $color-white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+.mood__page-back {
+  color: $color-black;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  text-align: left;
+  &:hover {
+    color: $color-darkGrey;
+  }
+}

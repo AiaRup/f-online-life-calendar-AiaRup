@@ -1,8 +1,9 @@
 import React from 'react';
 import './styles.scss';
 import Smiley from '../Smiley';
+import { Link } from 'react-router-dom';
 
-export default function Editor({ changeInputValue, currentMood, cancelEdit, message, onSubmitNewMood }) {
+export default function Editor({ changeInputValue, currentMood, cancelEdit, message, onSubmitNewMood, date }) {
   return (
     <form className="page__editor">
       <fieldset className="editor__fieldset">
@@ -11,7 +12,7 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
           <label htmlFor="date" className="editor__label">
             Date
           </label>
-          <input id="date" type="text" name="date" className="editor__input" />
+          <input type="date" id="start" name="mood__date" value={date} max={new Date().toJSON().slice(0, 10).replace("/",'-')} className="editor__input" />
         </div>
       </fieldset>
       <fieldset className="editor__fieldset">
@@ -44,7 +45,9 @@ export default function Editor({ changeInputValue, currentMood, cancelEdit, mess
         </fieldset>
       ) : null}
       <fieldset className="editor__fieldset buttons">
-        <input type="submit" value="Save" className="form__button submit__button" onClick={onSubmitNewMood} />
+        <Link to="/calendar" className="form__button submit__button" onClick={onSubmitNewMood}>
+          save
+        </Link>
         <button type="button" className="form__button cancel__button" onClick={cancelEdit}>
           Cancel
         </button>
