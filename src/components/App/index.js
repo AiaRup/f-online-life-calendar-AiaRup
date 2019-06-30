@@ -16,7 +16,6 @@ class App extends Component {
       newMood: { mood: 'good', message: '', date: '' },
       errorMessage: ''
     };
-    // this.cancelEdit = this.cancelEdit.bind(this);
     this.onSubmitNewMood = this.onSubmitNewMood.bind(this);
     this.initialNewMood = this.initialNewMood.bind(this);
   }
@@ -41,36 +40,25 @@ class App extends Component {
     });
   };
 
-  // cancelEdit() {
-  //   this.setState(prevState => {
-  //     return { newMood: { ...prevState.newMood, mood: 'good', message: '' } };
-  //   });
-  // }
-
   initialNewMood() {
-    this.setState({ newMood: { mood: 'good', message: '', date: '' } });
+    this.setState({ newMood: { mood: 'good', message: '', date: '' }, errorMessage: '' });
   }
 
   onSubmitNewMood(event) {
     const { date } = this.state.newMood;
-    console.log('in subtim');
-
     if (!isDate(date) || !date) {
       event.preventDefault();
-      console.log('in not date or empty');
-
       this.setState({ errorMessage: 'You need to provide a valid date.' });
       return;
     }
-    // if (!isDateBeforeToday(date)) {
-    //   console.log('in date in the future');
-
-    //   this.setState({ errorMessage: "You need to provide a date from the past or today's date." });
-    //   return;
-    // }
-
+    if (isDateBeforeToday(date)) {
+      event.preventDefault();
+      this.setState({ errorMessage: "You need to provide a date from the past or today's date." });
+      return;
+    }
     const { newMood, moods } = this.state;
-    if (moods.includes(mood => mood.date === newMood.date)) {
+    if (moods.filter(mood => mood.date === newMood.date).length > 0) {
+      event.preventDefault();
       this.setState({ errorMessage: 'You already provided your mood for the selected date, you can not change it.' });
       return;
     }

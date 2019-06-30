@@ -4,7 +4,7 @@ function isSupported(storage) {
     storage.setItem(key, key);
     storage.removeItem(key);
     return true;
-  } catch (e) {
+  } catch (event) {
     return false;
   }
 }

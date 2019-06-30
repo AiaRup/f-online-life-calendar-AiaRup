@@ -4,16 +4,6 @@ import Smiley from '../Smiley';
 import { Link } from 'react-router-dom';
 
 export default function Editor({ changeInputValue, currentMood, initialNewMood, message, onSubmitNewMood, errorMessage }) {
-  const ConditionalLink = !errorMessage ? (
-    <Link to="/calendar" className="form__button submit__button" onClick={onSubmitNewMood}>
-      save
-    </Link>
-  ) : (
-    <div className="form__button submit__button" onClick={onSubmitNewMood}>
-      save
-    </div>
-  );
-
   return (
     <div className="page__editor">
       <form>
@@ -21,13 +11,12 @@ export default function Editor({ changeInputValue, currentMood, initialNewMood, 
           <legend className="editor__legent">date</legend>
           <div>
             <label htmlFor="date" className="editor__label">
-              Date
+              date
             </label>
             <input
               type="date"
               id="date"
               name="mood__date"
-              // value={date}
               max={new Date()
                 .toJSON()
                 .slice(0, 10)

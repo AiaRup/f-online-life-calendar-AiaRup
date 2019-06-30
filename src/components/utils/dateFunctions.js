@@ -1,6 +1,7 @@
-const isDateBeforeToday = date => {
-  return new Date(date).toDateString() <= new Date(new Date().toDateString());
-  // return new Date(date.toDateString()) <= new Date(new Date().toDateString());
+const isDateBeforeToday = givenDate => {
+  const currentDate = new Date();
+  givenDate = new Date(givenDate);
+  return givenDate > currentDate;
 };
 
 export { isDateBeforeToday };
