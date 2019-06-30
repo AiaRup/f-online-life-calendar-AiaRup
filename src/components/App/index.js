@@ -51,11 +51,12 @@ class App extends Component {
     this.setState({ newMood: { mood: 'good', message: '', date: '' } });
   }
 
-  onSubmitNewMood() {
+  onSubmitNewMood(event) {
     const { date } = this.state.newMood;
     console.log('in subtim');
 
     if (!isDate(date) || !date) {
+      event.preventDefault();
       console.log('in not date or empty');
 
       this.setState({ errorMessage: 'You need to provide a valid date.' });

@@ -4,7 +4,15 @@ import Smiley from '../Smiley';
 import { Link } from 'react-router-dom';
 
 export default function Editor({ changeInputValue, currentMood, initialNewMood, message, onSubmitNewMood, errorMessage }) {
-  // const ConditionalLink = !this.props.isComingFromModal ? Link : React.DOM.div;
+  const ConditionalLink = !errorMessage ? (
+    <Link to="/calendar" className="form__button submit__button" onClick={onSubmitNewMood}>
+      save
+    </Link>
+  ) : (
+    <div className="form__button submit__button" onClick={onSubmitNewMood}>
+      save
+    </div>
+  );
 
   return (
     <div className="page__editor">
