@@ -4,9 +4,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Calendar from '../Calendar';
 import Editor from '../Editor';
 import MoodPage from '../MoodPage';
-import { isSupported } from '../utils/localStorage';
-import { isDate } from '../utils/dateFunctions';
-import { isDateBeforeToday } from '../utils/dateFunctions';
+import { isSupported } from '../../utils/localStorage';
+import { isDate } from '../../utils/dateFunctions';
+import { isDateBeforeToday } from '../../utils/dateFunctions';
 
 class App extends Component {
   constructor(props) {

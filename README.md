@@ -38,6 +38,7 @@ Your app is ready to be deployed!
         |-MoodPage
         |-Smiley
     |-scss
+    |-utils
 
 ```
 

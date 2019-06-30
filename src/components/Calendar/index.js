@@ -2,10 +2,9 @@ import React from 'react';
 import './styles.scss';
 import Smiley from '../Smiley';
 import { Link } from 'react-router-dom';
-import { sortDate } from '../utils/dateFunctions';
+import { sortDate } from '../../utils/dateFunctions';
 
 export default function Calendar({ moods }) {
-  // const sortedMoods = moods.sort(sortDate);
   return (
     <div className="page__calendar">
       <Link to="/editor" className="calendar__plus-button">
