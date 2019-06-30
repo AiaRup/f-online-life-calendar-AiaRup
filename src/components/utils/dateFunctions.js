@@ -10,3 +10,11 @@ const isDate = date => {
 };
 
 export { isDate };
+
+const sortDate = (firstDate, secondDate) => {
+  const dateA = new Date(firstDate.date);
+  const dateB = new Date(secondDate.date);
+  return dateA - dateB;
+};
+
+export { sortDate };

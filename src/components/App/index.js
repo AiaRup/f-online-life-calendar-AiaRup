@@ -61,12 +61,12 @@ class App extends Component {
       this.setState({ errorMessage: 'You need to provide a valid date.' });
       return;
     }
-    if (!isDateBeforeToday(date)) {
-      console.log('in date in the future');
+    // if (!isDateBeforeToday(date)) {
+    //   console.log('in date in the future');
 
-      this.setState({ errorMessage: "You need to provide a date from the past or today's date." });
-      return;
-    }
+    //   this.setState({ errorMessage: "You need to provide a date from the past or today's date." });
+    //   return;
+    // }
 
     const { newMood, moods } = this.state;
     if (moods.includes(mood => mood.date === newMood.date)) {
