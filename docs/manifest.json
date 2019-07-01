@@ -1,0 +1,15 @@
+{
+  "short_name": "Moody's - a mood calendar",
+  "name": "SPA that consists of a calendar page where you can see the mood you had every day and a form where you can add a new mood (by selecting a smiley) and a comment to each day",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
